@@ -1,5 +1,5 @@
 // 繰り返し処理
-pub(crate) fn loopFn() {
+pub(crate) fn loop_fn() {
     for i in 0..10 {
         println!("in for-loop: {}", i)
     }

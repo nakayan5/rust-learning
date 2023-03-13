@@ -15,7 +15,7 @@ fn main() {
     section::enum_example::color_fn();
     section::struct_example::struct_fn();
     section::condion_example::condion();
-    section::loop_example::loopFn();
+    section::loop_example::loop_fn();
     section::tuple_example::tuple();
     section::test_example::div(10, 100);
 }
