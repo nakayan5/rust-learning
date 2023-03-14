@@ -1,15 +1,13 @@
 [tasks.watch]
-run_task = [
-    { name = ["clippy", "test"]}
-]
+run_task = [{ name = ["clippy", "test"] }]
 watch = true
 
-[task.clippy]
+[tasks.clippy]
 command = "cargo"
 args = ["clippy"]
 
-[task.test]
+[tasks.test]
 command = "cargo"
 args = ["test"]
 
-// cargo make watch でwatchタスクを実行できる
+# cargo make watch でwatchタスクを実行できる

@@ -7,6 +7,8 @@ edition = "2021"
 
 [dependencies]
 rand = "0.8.5"
-# structopt = "0.3"
-# proconio = "0.4.3"
-# rand = "0.8.3"
+structopt = "0.3"
+proconio = "0.4.3"
+tokio = { version = "1", features = ["full"] }
+# featuresは機能を指定する
+mini-redis = "0.4"
