@@ -1,5 +1,24 @@
+use mini_redis::{client, Result};
+
 #[tokio::main]
-async fn main() -> std::io::Result<()> {
+pub async fn main() -> Result<()> {
+    // mini-redis アドレスへのコネクションを開く
+    // client::connect 関数は mini-redis クレートが提供しているものです。指定されたアドレスに対して、非同期に TCP コネクションを確立する。
+    let mut client = client::connect("127.0.0.1:6379").await?;
+
+    // "hello" というキーに "world" という値をセット
+    client.set("hello", "world".into()).await?;
+
+    // "hello" の値を取得
+    let result = client.get("hello").await?;
+
+    println!("got value from the server; result={:?}", result);
+
+    Ok(())
+}
+
+#[tokio::main]
+async fn async_fn() -> std::io::Result<()> {
     let _ = tokio::fs::read("file.text").await?;
     Ok(())
 }
